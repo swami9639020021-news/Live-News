@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live News</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background: #121212;
+      color: #f0f0f0;
+    }
+    header {
+      background: #d62828;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #f4a261;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 6px 12px;
+      background: #264653;
+      border-radius: 5px;
+    }
+    .breaking-news {
+      background: #d62828;
+      color: white;
+      padding: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .breaking-news span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    .search-bar input {
+      padding: 8px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    section {
+      padding: 20px;
+    }
+    .news {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #d62828;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    body.dark-mode .news {
+      background: #1e1e1e;
+      color: #fff;
+      border-left-color: #f4a261;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .search-bar input {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
+  <header>
+    <h1>📰 Live News</h1>
+    <p>ताज़ा खबरें सबसे पहले</p>
+  </header>
+
+  <div class="breaking-news">
+    <span>🔴 ब्रेकिंग: आज रात कैबिनेट की अहम बैठक... | इंडिया ने जीता एशिया कप... | CBSE ने 10वीं का रिजल्ट जारी किया...</span>
+  </div>
+
+  <nav>
+    <a href="#national">राष्ट्रीय</a>
+    <a href="#international">अंतरराष्ट्रीय</a>
+    <a href="#sports">खेल</a>
+    <a href="#entertainment">मनोरंजन</a>
+    <a href="#tech">टेक्नोलॉजी</a>
+    <a href="#jobs">सरकारी नौकरियाँ</a>
+    <a href="#bhakti">भक्ति</a>
+    <a href="#panchang">पंचांग</a>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search news...">
+  </div>
+
+  <section id="national">
+    <h2>🟥 राष्ट्रीय</h2>
+    <div class="news">
+      <h3>प्रधानमंत्री ने नए बिल की घोषणा की</h3>
+      <p>नई दिल्ली: संसद में शिक्षा सुधार पर विशेष चर्चा हुई...</p>
+    </div>
+  </section>
+
+  <section id="international">
+    <h2>🌍 अंतरराष्ट्रीय</h2>
+    <div class="news">
+      <h3>अमेरिका में चुनावी तैयारियाँ तेज़</h3>
+      <p>वॉशिंगटन: राष्ट्रपति चुनाव को लेकर गतिविधियाँ बढ़ गई हैं...</p>
+    </div>
+  </section>
+
+  <section id="sports">
+    <h2>🏏 खेल</h2>
+    <div class="news">
+      <h3>भारत ने पाकिस्तान को हराया</h3>
+      <p>क्रिकेट वर्ल्ड कप में भारत की शानदार जीत...</p>
+    </div>
+  </section>
+
+  <section id="entertainment">
+    <h2>🎬 मनोरंजन</h2>
+    <div class="news">
+      <h3>दीपिका ने नई फिल्म साइन की</h3>
+      <p>बॉलीवुड अभिनेत्री की अगली फिल्म में हॉलीवुड एंट्री...</p>
+    </div>
+  </section>
+
+  <section id="tech">
+    <h2>💻 टेक्नोलॉजी</h2>
+    <div class="news">
+      <h3>iPhone 16 की पहली झलक</h3>
+      <p>एप्पल ने नए iPhone मॉडल के फीचर्स पेश किए...</p>
+    </div>
+  </section>
+
+  <section id="jobs">
+    <h2>🏛️ सरकारी नौकरियाँ</h2>
+    <div class="news">
+      <h3>SSC और UPSC के नए नोटिफिकेशन जारी</h3>
+      <p>नौजवानों के लिए सुनहरा मौका...</p>
+    </div>
+  </section>
+
+  <section id="bhakti">
+    <h2>🙏 भक्ति</h2>
+    <div class="news">
+      <h3>श्रावण सोमवार पर विशेष पूजा</h3>
+      <p>शिवभक्तों के लिए खास दिन...</p>
+    </div>
+  </section>
+
+  <section id="panchang">
+    <h2>📅 पंचांग</h2>
+    <div class="news">
+      <h3>आज का मुहूर्त और राशिफल</h3>
+      <p>दैनिक पंचांग के अनुसार शुभ समय...</p>
+    </div>
+  </section>
+
+  <section id="admin">
+    <h2>🛠️ एडमिन पैनल</h2>
+    <div class="news">
+      <p>यहाँ आप भविष्य में न्यूज़ फॉर्म या CMS जोड़ सकते हैं जिससे आप डायरेक्ट वेबसाइट पर कंटेंट जोड़ सकें।</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Live News. सभी अधिकार सुरक्षित।</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
